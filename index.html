@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>how-to-do</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <h1>how-to-do</h1>
+      <p>Store and retrieve short tutorials, commands, and install notes. Use the left menu for quick actions.</p>
+      <nav>
+        <button id="menu-tutorials" class="active">Tutorials</button>
+        <button id="menu-add">Add New</button>
+        <button id="menu-export">Export XML</button>
+        <button id="menu-import">Import XML</button>
+      </nav>
+    </aside>
+    <main class="content">
+      <div class="header-bar">
+        <h2>how-to-do</h2>
+        <span id="statusMessage"></span>
+      </div>
+      <section id="tutorialSection" class="card">
+        <h3>Saved tutorials</h3>
+        <div class="search-bar">
+          <input id="searchInput" type="text" placeholder="Search topics..." />
+          <button id="clearSearchBtn">Clear</button>
+        </div>
+        <div id="searchInfo" class="search-info"></div>
+        <div id="tutorialList" class="card-list"></div>
+        <div class="pagination">
+          <button id="prevPage">Previous</button>
+          <button id="nextPage">Next</button>
+        </div>
+      </section>
+      <section id="addSection" class="card" style="display:none;">
+        <h3>Add a new tutorial</h3>
+        <div class="form-group">
+          <label for="topicInput">Topic</label>
+          <input id="topicInput" type="text" placeholder="e.g. Docker Setup" />
+        </div>
+        <div class="form-group">
+          <label for="categoryInput">Category</label>
+          <select id="categoryInput">
+            <option value="General">General</option>
+            <option value="Linux">Linux</option>
+            <option value="Windows">Windows</option>
+            <option value="Networking">Networking</option>
+            <option value="Install">Install</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="descriptionInput">Short description</label>
+          <textarea id="descriptionInput" placeholder="Describe the purpose and steps"></textarea>
+        </div>
+        <div class="actions">
+          <button id="saveButton" class="primary">Save Tutorial</button>
+          <button id="clearButton" class="secondary">Clear Form</button>
+        </div>
+      </section>
+      <input id="importInput" type="file" accept=".xml" style="display:none;" />
+      <p class="footer-note">Use the page controls to browse stored tutorials. Export creates an XML file you can keep locally.</p>
+    </main>
+  </div>
+<script src="js/script.js"></script>
+</body>
+</html>
